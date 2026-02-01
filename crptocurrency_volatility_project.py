@@ -16,19 +16,19 @@ st.set_page_config(
 def load_model():
     try:
         # Try loading the optimized model first
-        return joblib.load('optimized_volatility_model.pkl')
+        return joblib.load('optimized_volatility_model-3.pkl')
     except FileNotFoundError:
         # Fallback to standard model if optimized not found
         try:
             return joblib.load('volatility_model.pkl')
         except FileNotFoundError:
-            st.error("Error: Model file (optimized_volatility_model.pkl or volatility_model.pkl) not found.")
+            st.error("Error: Model file (optimized_volatility_model-3.pkl or volatility_model.pkl) not found.")
             st.stop()
         except Exception as e:
             st.error(f"Error loading volatility_model.pkl: {e}")
             st.stop()
     except Exception as e:
-        st.error(f"Error loading optimized_volatility_model.pkl: {e}")
+        st.error(f"Error loading optimized_volatility_model-3.pkl: {e}")
         st.stop()
     return None # Ensure None is returned if st.stop() somehow doesn't halt execution
 
