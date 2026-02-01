@@ -23,7 +23,7 @@ df = pd.read_csv("processed_cryptocurrency_data.csv")
 df
 
 # 1. Data Cleaning & Consistency
-df_clean = df.drop(columns=['Unnamed: 0', 'timestamp'])
+df_clean = df.drop(columns=['Unnamed: 0', 'timestamp'], errors = 'ignore')
 df_clean['date'] = pd.to_datetime(df_clean['date'])
 df_clean = df_clean.sort_values(by=['crypto_name', 'date']).reset_index(drop=True)
 
