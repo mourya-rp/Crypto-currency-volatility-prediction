@@ -18,7 +18,7 @@ warnings.filterwarnings('ignore')
 
 #Phase 1
 #Loading the dataset
-df = pd.read_csv("/content/drive/MyDrive/dataset.csv")
+df = pd.read_csv("processed_cryptocurrency_data.csv")
 
 df
 
